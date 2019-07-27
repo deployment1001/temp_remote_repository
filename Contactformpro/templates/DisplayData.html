@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Displaing Data</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <h2 class="text-center">Emolyee Details</h2>
+    {% if data %}
+       <table class="table table-bordered text-center">
+       <thead>
+       <tr>
+           <th>Emp Name</th>
+           <th>Emp Location</th>
+           <th>Emp Salry</th>
+           <th>Emp Email</th>
+       </tr>
+       </thead>
+        {% for i in data%}
+            <tbody>
+         <tr>
+           <td>{{ i.name }}</td>
+           <td>{{ i.location }}</td>
+           <td>{{ i.salary }}</td>
+           <td>{{ i.email }}</td>
+       </tr>
+       </tbody>
+       {%endfor%}
+       </table>
+          {%else%}
+      <h1>Data is not available</h1>
+    {%endif%}
+    </form>
+</body>
+</html>
